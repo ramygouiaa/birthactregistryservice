@@ -1,0 +1,30 @@
+{
+  "name": "birthactregistryservice",
+  "version": "1.0.0",
+  "description": "Test server to interact with BirthRegistry contract.",
+  "main": "birthactregistryservice.js",
+  "scripts": {
+    "start": "node birthactregistryservice.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramygouiaa/birthactregistryservice.git"
+  },
+  "keywords": [
+    "smart",
+    "contract",
+    "ethereum",
+    "goerly"
+  ],
+  "author": "Ramy Gouiaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramygouiaa/birthactregistryservice/issues"
+  },
+  "homepage": "https://github.com/ramygouiaa/birthactregistryservice#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ethers": "^6.1.0",
+    "express": "^4.18.2"
+  }
+}
