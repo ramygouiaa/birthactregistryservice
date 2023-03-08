@@ -35,6 +35,10 @@ const contract = new ethers.Contract(CONTRACT_ADDRESS, abi, wallet);
 // Add middleware to parse request body as JSON
 app.use(express.json());
 
+app.get('/', (req, res) => {
+res.send('Welcome to the Birth act registry service!')
+})
+
 // Route to add a new birth act to the blockchain
 app.post('/addbirthact', async (req, res) => {
   try {
