@@ -10,6 +10,7 @@ const express = require('express');
 const { ethers } = require('ethers');
 const cors = require('cors');
 const abi = require('./abi.json');
+require('dotenv').config();
 
 // Initialize Express app
 const app = express();
@@ -22,13 +23,14 @@ const port = process.env.PORT || 4000;
 //BNB test Network jsonRPCProvider
 const BNB_TEST_NETWORK = 'https://data-seed-prebsc-1-s1.binance.org:8545'
 
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const CONTRACT_ADDRESS = '0xBEb7C33BA4D9a7bCD8114F5d3769f0Ec5156780e';
-const privateKey = '67a47f2e2ab188abc249fe795fcad8edc52b9102c401cc5b1f687014232e5d30';
+//const privateKey = '67a47f2e2ab188abc249fe795fcad8edc52b9102c401cc5b1f687014232e5d30';
 
 //initialize provider to bnb test network
 const provider = new ethers.JsonRpcProvider(BNB_TEST_NETWORK);
     
-const wallet = new ethers.Wallet(privateKey, provider);
+const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
 
 // Load contract ABI
 const contract = new ethers.Contract(CONTRACT_ADDRESS, abi, wallet);
