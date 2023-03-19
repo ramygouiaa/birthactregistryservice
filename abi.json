@@ -5,112 +5,16 @@
 				"components": [
 					{
 						"internalType": "string",
-						"name": "registryOffice",
+						"name": "uid",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "registrationNumber",
-						"type": "string"
-					},
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "surname",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "sex",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "birthday",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "placeOfBirth",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "religion",
-								"type": "string"
-							}
-						],
-						"internalType": "struct BirthRegistry.Child",
-						"name": "child",
-						"type": "tuple"
-					},
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "familyName",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "birthName",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "surname",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "religion",
-								"type": "string"
-							}
-						],
-						"internalType": "struct BirthRegistry.Parent",
-						"name": "mother",
-						"type": "tuple"
-					},
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "familyName",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "birthName",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "surname",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "religion",
-								"type": "string"
-							}
-						],
-						"internalType": "struct BirthRegistry.Parent",
-						"name": "father",
-						"type": "tuple"
-					},
-					{
-						"internalType": "string",
-						"name": "furtherInformation",
+						"name": "cid",
 						"type": "string"
 					}
 				],
-				"internalType": "struct BirthRegistry.BirthAct",
+				"internalType": "struct BirthActRegistry.BirthAct",
 				"name": "birthAct",
 				"type": "tuple"
 			}
@@ -131,19 +35,13 @@
 			{
 				"indexed": false,
 				"internalType": "string",
-				"name": "childName",
+				"name": "uid",
 				"type": "string"
 			},
 			{
 				"indexed": false,
 				"internalType": "string",
-				"name": "childSurname",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"internalType": "string",
-				"name": "childBirthday",
+				"name": "cid",
 				"type": "string"
 			}
 		],
@@ -151,26 +49,13 @@
 		"type": "event"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "address",
-				"name": "contractOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnerOfContract",
-		"type": "event"
-	},
-	{
 		"inputs": [],
-		"name": "getAllBirthActHashes",
+		"name": "getAllBirthActs",
 		"outputs": [
 			{
-				"internalType": "bytes32[]",
+				"internalType": "string[]",
 				"name": "",
-				"type": "bytes32[]"
+				"type": "string[]"
 			}
 		],
 		"stateMutability": "view",
@@ -179,125 +64,17 @@
 	{
 		"inputs": [
 			{
-				"internalType": "bytes32",
-				"name": "birthActHash",
-				"type": "bytes32"
+				"internalType": "string",
+				"name": "_uid",
+				"type": "string"
 			}
 		],
-		"name": "getBirthAct",
+		"name": "getBirthActById",
 		"outputs": [
 			{
-				"components": [
-					{
-						"internalType": "string",
-						"name": "registryOffice",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "registrationNumber",
-						"type": "string"
-					},
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "surname",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "sex",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "birthday",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "placeOfBirth",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "religion",
-								"type": "string"
-							}
-						],
-						"internalType": "struct BirthRegistry.Child",
-						"name": "child",
-						"type": "tuple"
-					},
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "familyName",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "birthName",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "surname",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "religion",
-								"type": "string"
-							}
-						],
-						"internalType": "struct BirthRegistry.Parent",
-						"name": "mother",
-						"type": "tuple"
-					},
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "familyName",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "birthName",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "surname",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "religion",
-								"type": "string"
-							}
-						],
-						"internalType": "struct BirthRegistry.Parent",
-						"name": "father",
-						"type": "tuple"
-					},
-					{
-						"internalType": "string",
-						"name": "furtherInformation",
-						"type": "string"
-					}
-				],
-				"internalType": "struct BirthRegistry.BirthAct",
+				"internalType": "string",
 				"name": "",
-				"type": "tuple"
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",

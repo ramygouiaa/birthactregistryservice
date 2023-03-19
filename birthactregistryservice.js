@@ -24,7 +24,7 @@ const port = process.env.PORT || 4000;
 const BNB_TEST_NETWORK = 'https://data-seed-prebsc-1-s1.binance.org:8545'
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const CONTRACT_ADDRESS = '0xBEb7C33BA4D9a7bCD8114F5d3769f0Ec5156780e';
+const CONTRACT_ADDRESS = '0x90A29e100D63024ef734F4Cb56CCF2bB16e72494';
 
 //initialize provider to bnb test network
 const provider = new ethers.JsonRpcProvider(BNB_TEST_NETWORK);
