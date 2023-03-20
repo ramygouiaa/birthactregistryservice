@@ -64,7 +64,7 @@ app.get('/getbirthact', async (req, res) => {
     const hash = req.query.hash;
     console.log(hash);
     // Call the getBirthAct function in the contract with the hash parameter
-    const result = await contract.getBirthAct(hash);
+    const result = await contract.getBirthActById(hash);
 
     // Return the birth act data as JSON
     res.json(result);
@@ -78,7 +78,7 @@ app.get('/getbirthact', async (req, res) => {
 app.get('/getall', async (req, res) => {
   try {
     // Call the getAllBirthActHashes function in the contract
-    const result = await contract.getAllBirthActHashes();
+    const result = await contract.getAllBirthActs();
 
     // Return the birth act hashes as JSON
     res.json(result);
