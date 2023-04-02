@@ -18,7 +18,7 @@ const app = express();
 //allow all origins (for demonstration only)
 app.use(cors({origin:"*"}));
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4003;
 
 //BNB test Network jsonRPCProvider
 const BNB_TEST_NETWORK = 'https://data-seed-prebsc-1-s1.binance.org:8545'
