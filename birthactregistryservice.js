@@ -88,6 +88,21 @@ app.get('/getall', async (req, res) => {
   }
 });
 
+// Error handling middleware
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+// Process event listeners
+process.on('uncaughtException', function(err) {
+  console.error('Uncaught Exception:', err.stack);
+});
+
+process.on('unhandledRejection', function(reason, promise) {
+  console.error('Unhandled Rejection:', reason.stack || reason);
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Birth act service listening at http://localhost:${port}`);
